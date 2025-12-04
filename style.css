@@ -1,94 +1,112 @@
+/* Base font for body */
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
 /* Navigation Bar */
-
 #home {
-  background-color: #112240;
-  padding-bottom: 1cm;
-  margin-left: -1cm;
-  margin-right: -1cm;
-  margin-top: -1cm;
+  background-color: #7600bc;
   padding-top: 2cm;
   padding-bottom: 2cm;
+  margin: -1cm -1cm 0 -1cm; /* top right bottom left */
   height: 5mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: lightgray;
 }
 
+/* Navigation links */
 .topmenu {
-  color: red;
-  margin: 10px;
-  padding: 20px;
+  color: lightgray;
+  margin: 0 10px;
+  padding: 20px 10px;
   font-size: 20px;
   text-decoration: none;
+  transition: color 0.3s ease, font-weight 0.3s ease, text-decoration 0.3s ease;
 }
 
+/* Hover effect for nav links */
 .topmenu:hover {
   color: white;
   font-weight: bolder;
   text-decoration: underline;
-  /* Add the styles here. This will make the nav link turn white, become bold, and show an underline on hover */
+  cursor: pointer;
 }
 
+/* Container for navigation links on right */
 .topdiv {
   float: right;
   padding-right: 1cm;
+  display: flex;
+  align-items: center;
 }
 
+/* Profile name section on left */
 .profile_name {
   float: left;
   padding-left: 2cm;
-  /* Add the styles here */
+  font-weight: 600;
+  font-size: 18px;
+  color: white;
+  user-select: none;
 }
 
+/* Contact info inside profile_name */
 .profile_name .contact_info {
   font-size: 15px;
   font-style: italic;
   display: flex;
   align-items: center;
-  flex-direction: row;
+  gap: 10px;
+  margin-top: 5px;
+  color: #d8c6f8;
 }
 
+/* Icon styles for contact info */
 .contact_info img {
   width: 25px;
+  height: 25px;
+  object-fit: contain;
   margin-right: 10px;
   float: left;
 }
 
-/* Titles */
-
+/* Section Titles */
 h2 {
-  text-align: justify;
+  color: #4f037a;
   font-size: 50px;
+  margin: 40px 60px 0 60px;
   text-align: center;
   float: left;
-  color: #7600bc;
-  margin: 30px;
-  margin-left: 60px;
-  margin-top: 40px;
-  margin-bottom: 0px;
+  font-weight: 700;
 }
 
+/* Introduction text style */
 .introduction {
-  text-align: justify;
   font-size: 30px;
+  margin: 30px 0 20px 0;
   text-align: center;
-  float: left;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  font-weight: 500;
   animation-duration: 5s;
   position: relative;
+  color: #4a148c;
 }
 
-/* Used in the About Me sections */
-
+/* Container for About Me and similar sections */
 .container {
   display: flex;
+  gap: 30px;
+  padding: 20px 60px;
+  align-items: center;
 }
 
-/* About Me */
-
+/* About Me specific */
 .about-me {
   display: flex;
   align-items: center;
@@ -98,73 +116,82 @@ h2 {
   font-size: 65px;
   margin-top: 90px;
   color: #7600bc;
+  font-weight: 800;
 }
 
 #about-me p {
   font-size: 25px;
-  color: rgb(128, 128, 128);
+  color: rgb(85, 85, 85);
   margin-top: -1cm;
+  line-height: 1.5;
+  max-width: 600px;
 }
 
+/* Profile image */
 .profile_image {
   width: 550px;
-  height: fit-content;
+  height: auto;
   vertical-align: middle;
   margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(118, 0, 188, 0.4);
 }
 
-/* Skills */
-
+/* Skills Section */
 .all_skills {
   display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
 .skill {
   border: 1px solid gray;
-  display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
   padding: 10px;
   width: 2in;
   font-size: 20px;
-  box-shadow: 0 3px 10px gray;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.skill:hover {
+  box-shadow: 0 6px 20px rgba(118, 0, 188, 0.6);
 }
 
 .skill img {
   height: 35px;
-  align-items: center;
+  margin-bottom: 10px;
+  vertical-align: middle;
 }
 
 .skills h6 {
-  align-items: center;
   font-size: 20px;
-  margin-block-start: 8px;
-  margin-block-end: 5px;
+  margin: 8px 0 5px 0;
   font-weight: bold;
+  color: #4a148c;
 }
 
 .skills p {
-  align-items: center;
   font-size: 15px;
   color: gray;
-  margin-block-start: 5px;
-  margin-block-end: 5px;
+  margin: 5px 0;
 }
 
+/* Flex center helper */
 .flex_center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Projects */
-
+/* Projects Section */
 .projects-container {
   margin-top: 30px;
   margin-left: 60px;
+  max-width: 900px;
 }
 
 .projects-container hr {
@@ -181,47 +208,51 @@ h2 {
 .project-card h3 {
   font-size: 25px;
   margin-left: 30px;
+  color: #5e009c;
 }
 
 .project-card li {
   font-size: 20px;
   margin-left: 30px;
+  line-height: 1.4;
 }
 
-/* Recommendations */
-
+/* Recommendations Section */
 .all_recommendations {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
   margin-left: 1in;
-  flex-direction: row;
-  flex-flow: wrap;
-  padding: 20px;
+  justify-content: center;
 }
 
 .recommendation {
   font-style: italic;
   text-align: left;
-  width: 21.875rem;
-  padding: 1rem;
+  width: 350px;
   background-color: #fff;
   border-radius: 11px;
-  box-shadow: 0 3px 10px var(--primary-shadow);
+  box-shadow: 0 3px 10px rgba(118, 0, 188, 0.2);
   padding: 20px;
   margin: 10px;
   border: 1px solid gray;
   font-size: 18px;
   height: 150px;
+  color: #4a148c;
+  position: relative;
 }
 
 .recommendation span {
   color: #7600bc;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
+  position: absolute;
+  top: 10px;
+  left: 15px;
 }
 
 /* Scroll to Top Button */
-
 .iconbutton {
   width: 48px;
   height: 48px;
@@ -234,419 +265,102 @@ h2 {
   right: 3%;
   bottom: 3%;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(118, 0, 188, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.iconbutton:hover {
+  background-color: #520083;
 }
 
 /* Form Pop-up */
-
 .popup {
   width: 400px;
   background-color: #e8bcf0;
-  border-radius: 3mm;
+  border-radius: 12px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   position: fixed;
-  /* padding: 30px; */
   visibility: hidden;
+  box-shadow: 0 6px 20px rgba(118, 0, 188, 0.5);
+  padding: 30px;
+  z-index: 1000;
 }
 
 .popup img {
   padding-top: 20px;
+  width: 60px;
+  height: 60px;
 }
 
 .popup button {
   background-color: #fff;
   border: 1px solid #7600bc;
   color: #7600bc;
-  display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
+  margin: 50px auto 0 auto;
   padding: 10px;
-  width: 2in;
+  width: 8em;
   font-size: 20px;
-  margin-left: 25%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
 }
 
 .popup button:hover {
-  background-color: #fff;
-  border: 2px solid #7600bc;
-  color: #7600bc;
-  display: block;
+  background-color: #7600bc;
+  color: #fff;
+  border: 2px solid #520083;
   font-weight: bolder;
-  text-align: center;
-  cursor: pointer;
-  margin-left: 25%;
 }
 
-/* Recommendation Form */
-
+/* Recommendation Form inputs */
 input,
 textarea {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-  margin: 10px;
+  margin: 10px 0;
   width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  resize: vertical;
+  box-sizing: border-box;
 }
 
 fieldset {
-  display: flexbox;
-  align-content: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 25px;
-  margin-left: 50px;
-  margin-right: 50px;
-  border: thin solid white;
+  margin: 20px auto;
+  border: thin solid #ddd;
   width: 50%;
+  background-color: #fff;
 }
 
 /* Buttons */
-
 button {
   background-color: #fff;
   border: 1px solid #7600bc;
   color: #7600bc;
-  display: block;
   border-radius: 6px;
   text-align: center;
-  margin: 50px;
+  margin: 50px auto;
   padding: 10px;
-  width: 2in;
+  width: 8em;
   font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
 }
 
 button:hover {
   background-color: #7600bc;
-  border: 1px solid #7600bc;
   color: #fff;
-  display: block;
-  border-radius: 6px;
-  text-align: center;
-  cursor: pointer;
-  body {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-  }
-
-  /* Navigation Bar */
-
-  #home {
-    background-color: #7600bc;
-    padding-bottom: 1cm;
-    margin-left: -1cm;
-    margin-right: -1cm;
-    margin-top: -1cm;
-    padding-top: 2cm;
-    padding-bottom: 2cm;
-    height: 5mm;
-  }
-
-  .topmenu {
-    color: lightgray;
-    margin: 10px;
-    padding: 20px;
-    font-size: 20px;
-    text-decoration: none;
-  }
-
-  .topmenu:hover {
-    color: white;
-    /* Add the styles here */
-  }
-
-  .topdiv {
-    float: right;
-    padding-right: 1cm;
-  }
-
-  .profile_name {
-    float: left;
-    padding-left: 2cm;
-    /* Add the styles here */
-  }
-
-  .profile_name .contact_info {
-    font-size: 15px;
-    font-style: italic;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  .contact_info img {
-    width: 25px;
-    margin-right: 10px;
-    float: left;
-  }
-
-  /* Titles */
-
-  h2 {
-    text-align: justify;
-    font-size: 50px;
-    text-align: center;
-    float: left;
-    color: #7600bc;
-    margin: 30px;
-    margin-left: 60px;
-    margin-top: 40px;
-    margin-bottom: 0px;
-  }
-
-  .introduction {
-    text-align: justify;
-    font-size: 30px;
-    text-align: center;
-    float: left;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    animation-duration: 5s;
-    position: relative;
-  }
-
-  /* Used in the About Me sections */
-
-  .container {
-    display: flex;
-  }
-
-  /* About Me */
-
-  .about-me {
-    display: flex;
-    align-items: center;
-  }
-
-  #about-me h1 {
-    font-size: 65px;
-    margin-top: 90px;
-    color: #7600bc;
-  }
-
-  #about-me p {
-    font-size: 25px;
-    color: rgb(128, 128, 128);
-    margin-top: -1cm;
-  }
-
-  .profile_image {
-    width: 550px;
-    height: fit-content;
-    vertical-align: middle;
-    margin: 5px;
-  }
-
-  /* Skills */
-
-  .all_skills {
-    display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-  }
-
-  .skill {
-    border: 1px solid gray;
-    display: block;
-    border-radius: 6px;
-    text-align: center;
-    margin: 50px;
-    padding: 10px;
-    width: 2in;
-    font-size: 20px;
-    box-shadow: 0 3px 10px gray;
-  }
-
-  .skill img {
-    height: 35px;
-    align-items: center;
-  }
-
-  .skills h6 {
-    align-items: center;
-    font-size: 20px;
-    margin-block-start: 8px;
-    margin-block-end: 5px;
-    font-weight: bold;
-  }
-
-  .skills p {
-    align-items: center;
-    font-size: 15px;
-    color: gray;
-    margin-block-start: 5px;
-    margin-block-end: 5px;
-  }
-
-  .flex_center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Projects */
-
-  .projects-container {
-    margin-top: 30px;
-    margin-left: 60px;
-  }
-
-  .projects-container hr {
-    border: 1px solid lightgray;
-    width: 75%;
-    margin-left: 5cm;
-  }
-
-  .project-card {
-    margin: 0 15px 15px 30px;
-    padding-bottom: 5px;
-  }
-
-  .project-card h3 {
-    font-size: 25px;
-    margin-left: 30px;
-  }
-
-  .project-card li {
-    font-size: 20px;
-    margin-left: 30px;
-  }
-
-  /* Recommendations */
-
-  .all_recommendations {
-    display: flex;
-    align-items: center;
-    margin-left: 1in;
-    flex-direction: row;
-    flex-flow: wrap;
-    padding: 20px;
-  }
-
-  .recommendation {
-    font-style: italic;
-    text-align: left;
-    width: 21.875rem;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 11px;
-    box-shadow: 0 3px 10px var(--primary-shadow);
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid gray;
-    font-size: 18px;
-    height: 150px;
-  }
-
-  .recommendation span {
-    color: #7600bc;
-    font-size: 20px;
-    font-family: "Times New Roman", Times, serif;
-  }
-
-  /* Scroll to Top Button */
-
-  .iconbutton {
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-    background-color: #7600bc;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    right: 3%;
-    bottom: 3%;
-    cursor: pointer;
-  }
-
-  /* Form Pop-up */
-
-  .popup {
-    width: 400px;
-    background-color: #e8bcf0;
-    border-radius: 3mm;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    position: fixed;
-    /* padding: 30px; */
-    visibility: hidden;
-  }
-
-  .popup img {
-    padding-top: 20px;
-  }
-
-  .popup button {
-    background-color: #fff;
-    border: 1px solid #7600bc;
-    color: #7600bc;
-    display: block;
-    border-radius: 6px;
-    text-align: center;
-    margin: 50px;
-    padding: 10px;
-    width: 2in;
-    font-size: 20px;
-    margin-left: 25%;
-  }
-
-  .popup button:hover {
-    background-color: #fff;
-    border: 2px solid #7600bc;
-    color: #7600bc;
-    display: block;
-    font-weight: bolder;
-    text-align: center;
-    cursor: pointer;
-    margin-left: 25%;
-  }
-
-  /* Recommendation Form */
-
-  input,
-  textarea {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
-    margin: 10px;
-    width: 100%;
-  }
-
-  fieldset {
-    display: flexbox;
-    align-content: center;
-    justify-content: center;
-    padding: 25px;
-    margin-left: 50px;
-    margin-right: 50px;
-    border: thin solid white;
-    width: 50%;
-  }
-
-  /* Buttons */
-
-  button {
-    background-color: #fff;
-    border: 1px solid #7600bc;
-    color: #7600bc;
-    display: block;
-    border-radius: 6px;
-    text-align: center;
-    margin: 50px;
-    padding: 10px;
-    width: 2in;
-    font-size: 20px;
-  }
-
-  button:hover {
-    background-color: #7600bc;
-    border: 1px solid #7600bc;
-    color: #fff;
-    display: block;
-    border-radius: 6px;
-    text-align: center;
-    cursor: pointer;
-  }
+  border-color: #520083;
 }
